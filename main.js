@@ -57,3 +57,28 @@ function getUserName(params) {
 
 const userName = getUserName()
 const randomNumber = getRandomNumber()
+
+function game (objSettings, number, name) {
+
+    alert(`Hello , ${name} ! I have a number in interval from 
+    ${objSettings.min} to ${objSettings.max}. You have ${objSettings.attempts}
+    attempts for find. Let's go?`)
+
+    for (let index = 0; index < objSettings.attempts; index++){
+        const answer = prompt("Give your variant", "Input number")
+        if(answer > number){
+            alert(`My number is less. Now you have ${objSettings.attempts - index - 1} attempts`)
+        } else if (answer < number){
+            alert(`My number is more. Now you have ${objSettings.attempts - index - 1} attempts`)
+        }
+        else {
+            //win
+            alert("You are winner!")
+            return
+        }
+    }
+    //game over
+    alert("Ooops.. You are losee :-(   Give 10$ and good luck for next time!")
+}
+
+game(settings, randomNumber, userName)
