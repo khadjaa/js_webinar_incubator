@@ -60,16 +60,21 @@ const randomNumber = getRandomNumber()
 
 function game (objSettings, number, name) {
 
+    const answers = []
+
     alert(`Hello , ${name} ! I have a number in interval from 
     ${objSettings.min} to ${objSettings.max}. You have ${objSettings.attempts}
     attempts for find. Let's go?`)
 
     for (let index = 0; index < objSettings.attempts; index++){
         const answer = prompt("Give your variant", "Input number")
+        answers.push(answer)
         if(answer > number){
-            alert(`My number is less. Now you have ${objSettings.attempts - index - 1} attempts`)
+            alert(`My number is less. Now you have ${objSettings.attempts - index - 1} attempts. 
+            Your lasts numbers  ${answers.join()}`)
         } else if (answer < number){
-            alert(`My number is more. Now you have ${objSettings.attempts - index - 1} attempts`)
+            alert(`My number is more. Now you have ${objSettings.attempts - index - 1} attempts. 
+            Your lasts numbers  ${answers.join()}`)
         }
         else {
             //win
