@@ -39,10 +39,7 @@ const settings = {
     attempts: 10
 }
 
-function getRandomNumber(){
-    const number = Math.round(Math.random() * 100) 
-    return number
-}
+const getRandomNumber = () =>  Math.round(Math.random() * 100) 
 
 function getUserName(params) {
     let condition = true
